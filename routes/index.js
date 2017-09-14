@@ -19,8 +19,9 @@ router.get('/', function(req, res) {
   });
 });
 
-/* GET speakers page. */
-router.get('/speakers', function(req, res) {
+
+/* GET Leads page. */
+router.get('/leads', function(req, res) {
   var myArtwork = [];
   var myArtists = [];
   myArtists = appdata.speakers;
@@ -28,7 +29,7 @@ router.get('/speakers', function(req, res) {
   appdata.speakers.forEach(function(item) {
     myArtwork = myArtwork.concat(item.artwork);
   });
-  res.render('speakers', {
+  res.render('leads', {
     title: 'Speakers',
     artwork: myArtwork,
     artists: myArtists,
@@ -37,8 +38,8 @@ router.get('/speakers', function(req, res) {
 });
 
 
-/* GET speakers detail page */
-router.get('/speakers/:speakerid', function(req, res) {
+/* GET Form page */
+router.get('/form', function(req, res) {
   var myArtwork = [];
   var myArtists = [];
 
@@ -48,7 +49,7 @@ router.get('/speakers/:speakerid', function(req, res) {
       myArtwork = myArtwork.concat(item.artwork);
     }
   });
-  res.render('speakers', {
+  res.render('form', {
     title: 'Speakers',
     artwork: myArtwork,
     artists: myArtists,

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head><% include partials/template/head.ejs %></head>
+  <body class="<%= page %>">
+  <% include partials/template/header.ejs%>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-11">
+
+      </div>
+      <div class="col-1">
+        <button type="button" id="new-lead" class="btn btn-primary" onclick="window.open('/form')">New Lead+</button>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row header">
+    <div class="col"></div>
+    <div class="col">
+      <h1 align="center" id="lead-head">Leads</h1>
+    </div>
+    <div class="col"></div>
+  </div>
+
+  <div class="container">
+    <div class="row" id="input-row">
+      <div class="col">
+
+      </div>
+      <div class="col-2">
+
+      </div>
+      <div class="col-2">
+
+      </div>
+    </div>
+    <div class="row">
+      <div id="todolist-container" class="col-12">
+        <ul class="list-group" id="todolist">
+
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+  <% include partials/template/jsdefaults.ejs %>
+  </body>
+</html>

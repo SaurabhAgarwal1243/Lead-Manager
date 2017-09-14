@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head><% include partials/template/head.ejs %></head>
+<body class="<%= page %>">
+<% include partials/template/header.ejs%>
+
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <form>
+                <div class="form-group">
+                    <label for="costumerName" class="headings">Name</label>
+                    <input type="text" class="form-control" id="newtodo" aria-describedby="emailHelp" placeholder="Enter Name" [ngModelOptions]="{standalone:true}" [(ngModel)]="lead.name">
+                </div>
+                <div class="form-group">
+                    <label for="companyName" class="headings">Company Name</label>
+                    <input type="text" class="form-control" id="companyName" aria-describedby="emailHelp" placeholder="Enter Company Name" [ngModelOptions]="{standalone:true}" [(ngModel)]="lead.company">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1" class="headings">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" [ngModelOptions]="{standalone:true}" [(ngModel)]="lead.email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="phoneNumber" class="headings">Phone Number</label>
+                    <input type="number" class="form-control" id="phoneNumber" aria-describedby="emailHelp" placeholder="Enter Phone Number" [ngModelOptions]="{standalone:true}" [(ngModel)]="lead.phone">
+                </div>
+                <div class="form-group">
+                    <label for="requirments1" class="headings">Requirments</label>
+                    <input type="text" class="form-control" id="requirments1" aria-describedby="emailHelp" placeholder="Enter Requirments" [ngModelOptions]="{standalone:true}" [(ngModel)]="lead.requirements[0]">
+                </div>
+                <input type="text" class="form-control" id="requirments2" aria-describedby="emailHelp" placeholder="Enter Requirments" [ngModelOptions]="{standalone:true}" [(ngModel)]="lead.requirements[1]">
+                <br>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-secondary active">
+                        <input type="radio" name="options" id="option1" autocomplete="off" checked (click) = "changeClosed(true)"> CLOSED
+                    </label>
+                    <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option2" autocomplete="off" (click) = "changeClosed(false)"> UNCLOSED
+                    </label>
+                </div>
+                <br><br>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-secondary active">
+                        <input type="radio" name="options" id="option3" autocomplete="off" checked (click) ="changeQuote(true)"> QUOTED
+                    </label>
+                    <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option4" autocomplete="off" (click) ="changeQuote(false)"> UNQUOTED
+                    </label>
+                </div>
+                <br><br>
+                <button type="submit" class="btn btn-primary" id="addtodo">Add Lead</button><br><br>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+
+<% include partials/template/jsdefaults.ejs %>
+</body>
+</html>
